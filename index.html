@@ -1,0 +1,900 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aung Bhone Myat</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+</head>
+<style>
+*{
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    text-decoration: none;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+:root{
+    --primary-color: white;
+    --secondary-color: rgb(50, 50, 50);
+    --primary-light: whitesmoke;
+    --secondary-light: rgb(105, 105, 105);
+}
+.dark-mode{
+    --primary-color: rgb(50, 50, 50);
+    --secondary-color: white;
+    --primary-light: rgb(70, 70, 70);
+    --secondary-light: rgb(180, 180, 180);
+}
+/*Side bar*/
+#Sidebar{
+    height: 100vh;
+    width: 0%;
+    position: fixed;
+    z-index: 3;
+    top: 0;
+    left: 0;
+    background-color: var(--primary-light);
+    overflow-x: hidden;
+    transition: 0.4s;
+}
+#Sidebar a{
+    font-size: 16px;
+    color: var(--secondary-color);
+    display: block;
+    transition: none;
+    border-bottom: 1px solid rgb(235, 235, 235);
+    padding: 14px;
+}
+#Sidebar a:hover{
+    color: var(--secondary-light);
+}
+.large-nav-links li a:hover{
+    color: var(--secondary-light);
+}
+#Sidebar a i{
+    width: 25px;
+}
+.close-btn{
+    display: flex;
+    justify-content: end;
+    width:90%;
+    height:55px;
+    align-items:center;
+    font-size: 25px;
+    cursor: pointer;
+    color: var(--secondary-color);
+}
+.links{
+    margin-top: 25px;
+}
+/*Small Nav*/
+.small-nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 80px;
+    position: fixed;
+    top: 0;
+    z-index:1;
+    width: 100%;
+    border-bottom: 1px solid rgb(195, 195, 195);
+    border-top: 1px solid rgb(195, 195, 195);
+    background-color: var(--primary-color);
+}
+.bars{
+    cursor: pointer;
+    font-size: 23px;
+    margin-top: 3px;
+    color: var(--secondary-color);
+}
+.logo{
+    color: var(--secondary-color);
+    font-size: 23px;
+    font-weight: 500;
+}
+.small-nav button{
+    margin-top: 1px;
+    background: var(--secondary-color);
+    border: 1px solid var(--secondary-color);
+    border: none;
+    border-radius: 4px;
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: var(--primary-light);
+}
+.small-nav button i{
+    font-size: 15px;
+}
+/*Profile Section*/
+.page{
+    width: 100vw;
+    height: 100vh;
+}
+#1{
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--primary-color);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+.myimg img{
+    width: 200px;
+    height: 200px;
+    border-radius: 200px;
+    margin-right: 50px;
+}
+.section .pc1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+.pc1-1{
+    margin-bottom: 10px;
+    margin-left: 50px;
+    width: 220px;
+    height: 220px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    animation-delay: 0.2s;
+}
+.section .myimg{
+    width: 220px;
+    height: 220px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    animation-delay: 0.1s;
+}
+.pc1 p{
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-weight: 500;
+    color: var(--secondary-color);
+}
+.pc1 h3{
+    font-weight: 700;
+    font-size: x-large;
+    color: var(--secondary-color);
+}
+.pc1 button{
+    margin-top: 10px;
+    border-radius: 4px;
+    border: none;
+    padding: 10px;
+    background-color: rgb(61, 61, 249);
+    color: white;
+    cursor: pointer;
+}
+.bars{
+    display: none;
+}
+.large-nav-links{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    list-style-type: none;
+}
+.large-nav-links li{
+    padding-left: 10px;
+    padding-right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.large-nav-links li a{
+    color: var(--secondary-color);
+    font-size: 15px;
+    font-weight: 500;
+}
+.pfbtn .resume{
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    border: 1px solid var(--secondary-color);
+    margin-right: 5px;
+}
+.pfbtn .resume:hover{
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+}
+.pfbtn .hire{
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    border: 1px solid var(--secondary-color);
+    margin-left: 5px;
+}
+.pfbtn .hire:hover{
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+}
+/*Media Queries*/
+@media screen and (max-width:768px){
+    #1{
+        width: 100%;
+        height: 100vh;
+        background-color: var(--primary-color);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+    }
+    .large-nav-links{
+        display: none;
+    }
+    .bars{
+        display: inline;
+    }
+    .myimg img{
+        width: 200px;
+        height: 200px;
+        border-radius: 200px;
+        margin-right: 0;
+    }
+    .pc1{
+        text-align: center;
+        width: 100%;
+        flex-direction: column;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: 0;
+    }
+    .pc1-1{
+        margin-left: 0;
+    }
+    .pc1 p{
+        margin-top: 5px;
+        margin-bottom: 5px;
+        font-weight: 500;
+        color: var(--secondary-color);
+    }
+    .pc1 h3{
+        font-weight: 700;
+        font-size: x-large;
+        color: var(--secondary-color);
+    }
+    .pc1 button{
+        margin-top: 10px;
+        border-radius: 4px;
+        border: none;
+        padding: 10px;
+        background-color: rgb(61, 61, 249);
+        color: white;
+        cursor: pointer;
+    }
+    .pc1-1{
+        margin-top: 10px;
+    }
+    .pc2{
+        position: static;
+    }
+}
+.section{
+    width:100vw;
+    min-height:100vh;
+    display:flex;
+    padding: 0 35px;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    background:var(--primary-color);
+    transition: 0.4s;
+  }
+  .carousel::-webkit-scrollbar{
+    display:none;
+  }
+.ecarousel::-webkit-scrollbar{
+    display:none;
+  }
+.wcarousel::-webkit-scrollbar{
+    display:none;
+  }
+  .carousel .card{
+    scroll-snap-align:start;
+    list-style: none;
+    border-radius: 8px;
+    background: var(--secondary-color);
+    color:var(--primary-color);
+    height:350px;
+    width: 200px;
+    display: flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+  }
+  .carousel.dragging .card{
+    cursor:grab;
+    user-select:none;
+  }
+  .carousel.dragging{
+    scroll-behavior:auto;
+  }
+.ecarousel.dragging{
+    scroll-behavior:auto;
+  }
+.wcarousel.dragging{
+    scroll-behavior:auto;
+  }
+  .wrapper{
+    max-width:1100px;
+    width:100%;
+    position:relative;
+  }
+  .wrapper .carousel{
+    display:grid;
+    grid-auto-flow:column;
+    grid-auto-columns:calc((100%/3)-12px);
+    gap:16px;
+    overflow-x:auto;
+    scroll-snap-type: x mandatory;
+    cursor:pointer;
+    scrollbar-width:0;
+    scroll-behavior:smooth;
+    border-radius:8px;
+  }
+.ecarousel,.wcarousel{
+    display:grid;
+    grid-auto-flow:column;
+    grid-auto-columns:calc((100%/3)-12px);
+    gap:16px;
+    overflow-x:auto;
+    scroll-snap-type: x mandatory;
+    cursor:pointer;
+    scrollbar-width:0;
+    scroll-behavior:smooth;
+    border-radius:8px;
+  }
+  .image,.content{
+    width:100%;
+    height:50%;
+    padding: 10px;
+  }
+  .image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    border-radius:8px;
+  }
+  .content p, .btngp{
+    margin-top:8px;
+    margin-bottom:8px;
+  }
+  .content h3{
+    margin-bottom:5px;
+  }
+  .btngp button{
+    padding:5px;
+    margin-top:7px;
+    background: var(--primary-color);
+    color:var(--secondary-color);
+    outline:none;
+    border-radius:5px;
+    border:none;
+    width:70%;
+    display:flex;
+    align-items:center;
+    justify-content:start;
+  }
+  .exptext{
+    color: var(--secondary-color);
+    margin-bottom:80px;
+  }
+  .exptext h4{
+    font-size:30px;
+  }
+  .exptext p{
+    margin-top: 10px;
+  }
+  .exptext p a{
+    color: blue;
+  }
+  .wrapper>i{
+    height:40px;
+    width:40px;
+    background: var(--primary-color);
+    color:var(--secondary-color);
+    display:flex;
+    justify-content:center;
+    border:1px solid var(--secondary-color);
+    align-items:center;
+    border-radius:50%;
+    cursor:pointer;
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+  }
+  .wrapper>i:first-child{
+    left:-22px;
+  }
+  .wrapper>i:last-child{
+    right:-22px;
+  }
+  .content p{
+    font-size:13px;
+  }
+.endhr{
+  color:var(--secondary-color);
+}
+.btngp button i{
+  width:20px;
+  height:100%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  margin-right:5px;
+}
+#overlap{
+  width:0vw;
+  height:100vh;
+  z-index:2;
+  background:rgba(0,0,0,0.5);
+  position:fixed;
+}
+.education{
+  width:100%;
+  height:100%;
+  margin-bottom:50px;
+  padding:0;
+}
+
+.education .wrapper{
+  width:100%;
+  height:100%;
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+.education .wrapper .ecarousel .ecard .image{
+  height:100%;
+  margin:0px;
+  padding:0;
+  width:100%;
+  border-radius:0px;
+  box-sizing:border-box;
+}
+.education .wrapper .ecarousel .ecard .content>h3{
+  margin:0;
+  padding:0;
+}
+.education .wrapper .ecarousel{
+  gap:10px;
+  overflow-Y:hidden;
+  padding:8px;
+}
+.work{
+  width:100%;
+  height:100%;
+  margin-top:50px;
+}
+
+.work .wrapper{
+  width:100%;
+  height:100%;
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+.work .wrapper .wcarousel .wcard .image{
+  height:100%;
+  margin:0;
+  padding:0;
+  width:100%;
+  border-radius:0px;
+  box-sizing:border-box;
+}
+.work .wrapper .wcarousel .wcard .content>h3{
+  margin:0;
+  padding:0;
+}
+.work .wrapper .wcarousel{
+  gap:10px;
+  overflow-Y:hidden;
+  padding:8px;
+}
+.texter{
+  width:100%;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  margin-bottom:15px;
+  color:var(--secondary-color);
+}
+.texter p{
+  font-size:20px;
+}
+.sec3{
+  justify-content:center;
+  background-color:var(--primary-light);
+}
+.ecard,.wcard{
+    position:relative;
+    scroll-snap-align:end;
+    list-style: none;
+    border-radius: 8px;
+    background: var(--secondary-color);
+    color:var(--primary-color);
+    display: flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    width:180px;
+    height:180px;
+    border-radius:8px;
+    padding:0;
+    margin:0;
+    background-color:var(--primary-color);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 12px 0 rgba(0, 0, 0, 0.19);
+  }
+  .ecarousel.dragging .ecard{
+    cursor:grab;
+    user-select:none;
+  }
+.wcarousel.dragging .wcard{
+    cursor:grab;
+    user-select:none;
+  }
+.ecard i,.wcard i{
+  position:absolute;
+  top:8px;
+  right:8px;
+  font-size:18px;
+  color:black;
+}
+.eibtn,.wibtn{
+  position:absolute;
+  z-index:2;
+}
+</style>
+<body>
+  <div id="overlap" onclick="closeSidebar()">
+    
+  </div>
+  
+       <div id="Sidebar">
+            <span class="close-btn" onclick="closeSidebar()"><i class="fa fa-close"></i></span>
+            <div class="links">
+            <a href="#1" onclick="closeSidebar()"><i class="fa fa-user-circle"></i> Profile </a>
+            <a href="#2" onclick="closeSidebar()" ><i class="fa fa-window-maximize"></i> Project </a>
+            <a href="#3" onclick="closeSidebar()"><i class="fa fa-check-circle"></i> Background </a>
+            <a href="#4" onclick="closeSidebar()"><i class="fa fa-circle-info"></i> About </a>
+            <a href="#5" onclick="closeSidebar()"><i class="fa fa-envelope"></i> Contact </a>
+            </div>
+        </div>
+    
+<div class="page">
+  
+    <nav class="small-nav">
+        <span class="bars" onclick="openSidebar()"><i class="fa fa-bars"></i></span>
+        <a class="logo" href="#1">Portfolio</a>
+        <ul class="large-nav-links">
+            <li><a href="#1">Profile</a></li>
+            <li><a href="#2">Project</a></li>
+            <li><a href="#3">Background</a></li>
+            <li><a href="#4">About</a></li>
+            <li><a href="#5">Contact</a></li>
+        </ul>
+        <button id="mode"><i class="fas fa-lightbulb"></i></button>
+    </nav>
+
+    <section id="1" class="section">
+            <div class="pc1">
+            <div class="myimg animate__animated animate__fadeIn">
+                <img src="abm.jpg" alt="abm">
+            </div>
+            <div class="pc1-1 animate__fadeInUp animate__animated">
+            <p>Hello, I'm</p>
+            <h3>Aung Bhone Myat</h3>
+            <p>Web Developer</p>
+            <div class="pfbtn">
+                <button class="resume"> <i class="fas fa-download" style="padding-right: 5px;"></i> Resume</button>
+            <button class="hire"> <i class="fas fa-briefcase" style="padding-right: 6px;"></i> Hire me</button>
+            </div>
+            </div>
+            </div>
+    </section>
+        <hr class="endhr">      
+     <section id="2" class="section">
+    <div class="exptext">
+      <h4>Here're some of my projects.</h4>
+      <p>More? Explore <a href="#">here.</a> </p>
+    </div>
+    <div class="wrapper">
+      <i id="left" class="ibtn fa-solid fa-angle-left"></i>
+      <ul class="carousel">
+        <li class="card">
+          <div class="image">
+            <img src="dashboard.png" draggable="false">
+          </div>
+          <div class="content">
+            <h3>Admin Dashboard</h3>
+            <p>JavaScript | Bootstrap</p>
+            <div class="btngp">
+              <a href="#">
+                <button>
+                <i class="fas fa-eye"></i>
+                Live Demo
+              </button>
+              </a>
+              <a href="#">
+                <button>
+                <i class="fab fa-github"></i>
+                Source Code
+              </button>
+              </a>
+            </div>
+          </div>
+        </li>
+        <li class="card">
+          <div class="image">
+            <img src="dashboard.png" draggable="false">
+          </div>
+          <div class="content">
+            <h3>Admin Dashboard</h3>
+            <p>Bootstrap</p>
+            <div class="btngp">
+              <a href="#">
+                <button>
+                <i class="fas fa-eye"></i>
+                Live Demo
+              </button>
+              </a>
+              <a href="#">
+                <button>
+                <i class="fab fa-github"></i>
+                Source Code
+              </button>
+              </a>
+            </div>
+          </div>
+        </li>
+        <li class="card">
+          <div class="image">
+            <img src="dashboard.png" draggable="false">
+          </div>
+          <div class="content">
+            <h3>Admin Dashboard</h3>
+            <p>JavaScript | Bootstrap</p>
+            <div class="btngp">
+              <a href="#">
+                <button>
+                <i class="fas fa-eye"></i>
+                Live Demo
+              </button>
+              </a>
+              <a href="#">
+                <button>
+                <i class="fab fa-github"></i>
+                Source Code
+              </button>
+              </a>
+            </div>
+          </div>
+        </li>
+        <li class="card">
+          <div class="image">
+            <img src="dashboard.png" draggable="false">
+          </div>
+          <div class="content">
+            <h3>Admin Dashboard</h3>
+            <p>Bootstrap | PHP</p>
+            <div class="btngp">
+              <a href="#">
+                <button>
+                <i class="fas fa-eye"></i>
+                Live Demo
+              </button>
+              </a>
+              <a href="#">
+                <button>
+                <i class="fab fa-github"></i>
+                Source Code
+              </button>
+              </a>
+            </div>
+          </div>
+        </li>
+        <li class="card">
+          <div class="image">
+            <img src="dashboard.png" draggable="false">
+          </div>
+          <div class="content">
+            <h3>Admin Dashboard</h3>
+            <p>Bootstrap | PHP | Laravel</p>
+            <div class="btngp">
+              <a href="#">
+                <button>
+                <i class="fas fa-eye"></i>
+                Live Demo
+              </button>
+              </a>
+              <a href="#">
+                <button>
+                <i class="fab fa-github"></i>
+                Source Code
+              </button>
+              </a>
+            </div>
+          </div>
+        </li>
+      </ul>
+      <i id="right" class="ibtn fa-solid fa-angle-right"></i>
+    </div>
+  </section>
+      <hr class="endhr">
+      <section id="3" class="section sec3">
+        <div class="education">
+          <div class="texter">
+            <p>Education History</p>
+            <i class="fas fa-graduation-cap"></i>
+          </div>
+          <div class="wrapper">
+            <i id="left" class="eibtn fa-solid fa-angle-left"></i>
+            <ul class="ecarousel">
+              <li class="ecard">
+                <i class="fas fa-circle-info"></i>
+              <div class="image">
+               <img src="codelab.jpg" draggable="false">
+              </div>
+         
+        </li>
+              <li class="ecard">
+                <i class="fas fa-circle-info"></i>
+              <div class="image">
+               <img src="fairway.jpg" draggable="false">
+              </div>
+    
+        </li>
+              <li class="ecard">
+                <i class="fas fa-circle-info"></i>
+              <div class="image">
+               <img src="kmd.jpg" draggable="false">
+              </div>
+        </li>
+              
+              <li class="ecard">
+                <i class="fas fa-circle-info"></i>
+              <div class="image">
+               <img src="meta.jpg" draggable="false">
+              </div>
+        </li>
+              
+            </ul>
+            <i id="right" class="eibtn fa-solid fa-angle-right"></i>
+          </div>
+        </div>
+        <div class="work">
+          <div class="texter">
+            <p>Work History</p>
+            <i class="fas fa-briefcase"></i>
+          </div>
+          <div class="wrapper">
+            <i id="left" class="wibtn fa-solid fa-angle-left"></i>
+            <ul class="wcarousel">
+              <li class="wcard">
+                <i class="fas fa-circle-info"></i>
+              <div class="image">
+               <img src="google.jpg" draggable="false">
+              </div>
+         
+        </li>
+              <li class="wcard">
+                <i class="fas fa-circle-info"></i>
+              <div class="image">
+               <img src="meta.jpg" draggable="false">
+              </div>
+    
+        </li>
+              <li class="wcard">
+                <i class="fas fa-circle-info"></i>
+              <div class="image">
+               <img src="kmd.jpg" draggable="false">
+              </div>
+        </li>
+              <li class="wcard">
+                <i class="fas fa-circle-info"></i>
+              <div class="image">
+               <img src="codelab.jpg" draggable="false">
+              </div>
+        </li>
+              
+            </ul>
+            <i id="right" class="wibtn fa-solid fa-angle-right"></i>
+          </div>
+        </div>
+      </section>
+      <hr class="endhr">
+    </div>
+      
+  <script>
+  const carousel = document.querySelector(".carousel");
+  const firstCardWidth = carousel.querySelector(".card").offsetWidth;
+  const arrowBtn = document.querySelectorAll(".ibtn");
+  
+  const ecarousel = document.querySelector(".ecarousel");
+  const efirstCardWidth = ecarousel.querySelector(".ecard").offsetWidth;
+  const earrowBtn = document.querySelectorAll(".eibtn");
+  
+  const wcarousel = document.querySelector(".wcarousel");
+  const wfirstCardWidth = wcarousel.querySelector(".wcard").offsetWidth;
+  const warrowBtn = document.querySelectorAll(".wibtn");
+  
+  let isDragging = false, startX, startScrollingLeft;
+  const dragging = (e) => {
+    if(!isDragging) return;
+    carousel.scrollLeft = startScrollingLeft - (e.pageX - startX);
+  }
+  const dragStart = (e) => {
+    isDragging = true;
+    carousel.classList.add("dragging");
+    startX = e.pageX;
+    startScrollingLeft = carousel.scrollLeft;
+  }
+  const dragStop = () => {
+    isDragging = false;
+    carousel.classList.remove("dragging");
+  }
+  arrowBtn.forEach(btn => {
+    btn.addEventListener("click", () => {
+      carousel.scrollLeft += btn.id === "left" ? -firstCardWidth: firstCardWidth;
+    })
+  });
+  
+  earrowBtn.forEach(btn => {
+    btn.addEventListener("click", () => {
+      ecarousel.scrollLeft += btn.id === "left" ? -efirstCardWidth: efirstCardWidth;
+    })
+  });
+  
+  warrowBtn.forEach(btn => {
+    btn.addEventListener("click", () => {
+      wcarousel.scrollLeft += btn.id === "left" ? -wfirstCardWidth: wfirstCardWidth;
+    })
+  });
+  
+  carousel.addEventListener("mousedown",dragStart);
+  carousel.addEventListener("mousemove",dragging);
+  document.addEventListener("mouseup",dragStop);
+   
+  function openSidebar(){
+    document.getElementById("Sidebar").style.width="60%";
+    document.getElementById("overlap").style.width="100vw";
+}
+function closeSidebar(){
+    document.getElementById("Sidebar").style.width="0px";
+    document.getElementById("overlap").style.width="0vw";
+}
+var mode = document.getElementById("mode");
+mode.onclick = function(){
+    document.body.classList.toggle("dark-mode");
+}
+document.querySelector("button").addEventListener('click',function(){
+    const icon = this.querySelector('i');
+    if(icon.classList.contains('fa-lightbulb')){
+        icon.classList.remove('fa-lightbulb');
+        icon.classList.add('fa-moon');
+    }else{
+        icon.classList.remove('fa-moon');
+        icon.classList.add('fa-lightbulb');
+    }
+});
+  </script>
+</body>
+</html>
